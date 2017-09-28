@@ -125,15 +125,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="JsonObjectBase.cpp" />
+    <ClCompile Include="JsonObject.cpp" />
     <ClCompile Include="json\json_reader.cpp" />
     <ClCompile Include="json\json_value.cpp" />
     <ClCompile Include="json\json_writer.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TestObj.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JsonObjectBase.h" />
+    <ClInclude Include="JsonObject.h" />
     <ClInclude Include="TestObj.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

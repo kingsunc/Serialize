@@ -21,12 +21,6 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="JsonObjectBase.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TestObj.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="json\json_reader.cpp">
       <Filter>json</Filter>
     </ClCompile>
@@ -36,12 +30,15 @@
     <ClCompile Include="json\json_writer.cpp">
       <Filter>json</Filter>
     </ClCompile>
+    <ClCompile Include="JsonObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JsonObjectBase.h">
+    <ClInclude Include="TestObj.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="TestObj.h">
+    <ClInclude Include="JsonObject.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

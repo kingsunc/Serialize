@@ -6,6 +6,7 @@ int main()
 	objSrc.m_chVal = 'A';
 	objSrc.m_dVal = 1234.56;
 	objSrc.m_iVal = 123456;
+	objSrc.m_bVal = false;
 	objSrc.m_strVal = "abcdef";
 	objSrc.m_listVal.push_back(10);
 	objSrc.m_listVal.push_back(20);
@@ -14,6 +15,10 @@ int main()
 	objSrc.m_vecVal.push_back("abc");
 	objSrc.m_vecVal.push_back("edf");
 	objSrc.m_vecVal.push_back("ghi");
+
+	objSrc.subObj.m_chVal = 'B';
+	objSrc.subObj.m_dVal = 34.56;
+	objSrc.subObj.m_iVal = 3456;
 
 	objSrc.DisplayPropertys();
 	std::string strVal = objSrc.Serialize();
@@ -25,6 +30,6 @@ int main()
 	{
 		objDest.DisplayPropertys();
 	}
-	
+
 	return 1;
 }
