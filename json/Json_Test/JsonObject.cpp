@@ -60,33 +60,57 @@ Json::Value CJsonObject::DoSerialize()
 			break;
 		case asJsonObj:
 			{
-				CJsonObject* pObj = ToAny<CJsonObject*>(pAddr);
+				CJsonObject* pObj = static_cast<CJsonObject*>(pAddr);
 				if (pObj)
 				{
 					new_item[strName] = pObj->DoSerialize();
 				}
 			}
 			break;
+		case asChar:
+			{
+				new_item[strName] = ToAny<char>(pAddr);
+			}
+			break;
+		case asUChar:
+			{
+				new_item[strName] = ToAny<unsigned char>(pAddr);
+			}
+			break;
 		case asBool:
-			new_item[strName] = ToAny<bool>(pAddr);
+			{
+				new_item[strName] = ToAny<bool>(pAddr);
+			}
 			break;
 		case asInt:
-			new_item[strName] = ToAny<INT>(pAddr);
+			{
+				new_item[strName] = ToAny<INT>(pAddr);
+			}
 			break;
 		case asUInt:
-			new_item[strName] = ToAny<UINT>(pAddr);
+			{
+				new_item[strName] = ToAny<UINT>(pAddr);
+			}
 			break;
 		case asInt64:
-			new_item[strName] = ToAny<LONGLONG>(pAddr);
+			{
+				new_item[strName] = ToAny<LONGLONG>(pAddr);
+			}
 			break;
 		case asUInt64:
-			new_item[strName] = ToAny<ULONGLONG>(pAddr);
+			{
+				new_item[strName] = ToAny<ULONGLONG>(pAddr);
+			}
 			break;
 		case asDouble:
-			new_item[strName] = ToAny<double>(pAddr);
+			{
+				new_item[strName] = ToAny<double>(pAddr);
+			}
 			break;
 		case asString:
-			new_item[strName] = ToAny<string>(pAddr);
+			{
+				new_item[strName] = ToAny<string>(pAddr);
+			}
 		default:
 			// 其它类型可以自行添加;  
 			break;
@@ -130,6 +154,18 @@ bool CJsonObject::DoDeSerialize(Json::Value& root)
 			{
 				bool& val = ToAny<bool>(pAddr);
 				val = root.get(strName, 0).asBool();
+			}
+			break;
+		case asChar:
+			{
+				char& val = ToAny<char>(pAddr);
+				val = root.get(strName, 0).asInt();
+			}
+			break;
+		case asUChar:
+			{
+				unsigned char& val = ToAny<unsigned char>(pAddr);
+				val = root.get(strName, 0).asInt();
 			}
 			break;
 		case asInt:

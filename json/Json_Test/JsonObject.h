@@ -22,6 +22,8 @@ protected:
 	enum JsonType
 	{
 		asBool = 1,
+		asChar,
+		asUChar,
 		asInt,
 		asUInt,
 		asString,

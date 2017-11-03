@@ -34,7 +34,7 @@ public:
 	// 子类需要实现此函数，并且将相应的映射关系进行设置;   
 	virtual void InitPropertys()
 	{
-		AddProperty("chVal", asInt, &m_chVal);
+		AddProperty("chVal", asChar, &m_chVal);
 		AddProperty("dVal", asDouble, &m_dVal);
 		AddProperty("iVal", asInt, &m_iVal);
 		AddProperty("strVal", asString, &m_strVal);
@@ -78,3 +78,45 @@ public:
 
 	CSubTestObj		subObj;
 };
+
+//公共content
+//struct ContentBase : public CJsonObject
+//{
+//};
+
+//公共jsion结构
+struct Resp : public CJsonObject
+{
+	int state;                  //响应状态码
+	string message;                //响应结果状态
+	CJsonObject *content;
+
+	Resp(CJsonObject * pContent)
+	{
+		content = pContent;
+		InitPropertys();
+	}
+
+	virtual void InitPropertys()
+	{
+		AddProperty("content", asJsonObj, content);
+		AddProperty("message", asString, &message);
+		AddProperty("state", asInt, &state);
+	}
+	void DisplayPropertys() {}
+};
+
+struct GetToken : public CJsonObject
+{
+	string token;
+
+	GetToken() { InitPropertys(); }
+
+	virtual void InitPropertys()
+	{
+		AddProperty("token", asString, &token);
+	}
+	void DisplayPropertys() {}
+};
+
+

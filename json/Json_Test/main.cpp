@@ -30,6 +30,15 @@ int main()
 	{
 		objDest.DisplayPropertys();
 	}
+	GetToken getToken;
+	getToken.token = "aaa";
+	//std::string strVal1 = getToken->Serialize();
+
+	Resp resp(&getToken);
+	resp.state = 0;
+	resp.message = "ok";
+
+	std::string strVal11 = resp.Serialize();
 
 	return 1;
 }
